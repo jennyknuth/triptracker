@@ -1,0 +1,28 @@
+<nav>
+  <a href="/about">About</a>
+</nav>
+
+<h1>{{title}}</h1>
+{{#unless email}}
+<div class="authBox">
+  <a href="/login">Login</a>
+</div>
+<div class="authBox">
+  <p>
+    New User?
+  </p>
+  <a href="/register">Register</a>
+</div>
+{{/unless}}
+{{#if email}}
+<p>
+  Hello {{user}}!
+</p>
+{{/if}}
+<h3>Walk</h3>
+<h3>Bike</h3>
+<h3>Carpool</h3>
+<h3>Bus</h3>
+
+<h2>Cool Chart</h2>
+<img src="http://uncommercials.com/images/charts/flow-charts_1.png" alt="" />

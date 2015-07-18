@@ -1,0 +1,22 @@
+
+<h1>Login</h1>
+{{#if errors}}
+  {{#each errors}}
+  <p>
+    {{this}}
+  </p>
+  {{/each}}
+{{/if}}
+{{#if register}}
+  <p>
+    New User? Please <a href="/register">Register</a>
+  </p>
+{{/if}}
+
+<form action="/login" method="post">
+  <label for="email">Email</label>
+  <input type="email" name="email" id="email" value="{{content.email}}">
+  <label for="password">Password</label>
+  <input type="Password" name="password" id="password" value="{{content.password}}">
+  <input type="submit" value="Login">
+</form>
