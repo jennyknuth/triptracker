@@ -37,7 +37,7 @@ router.post('/login', function (req, res, next) {
             res.render('login', {errors: errors})
           } else {
             req.session.email = req.body.email
-            res.redirect('/:user') // login good to go!
+            res.redirect('/users/index') // login good to go!
           }
         })
       }
@@ -67,7 +67,7 @@ router.post('/register', function (req, res, next) {
         req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
         users.insert(req.body, function (err, doc) {
           if (err) {
-            res.redirect('/register')
+            res.redirect('/:_id')
           }
           // req.session.id = doc._id
           req.session.email = req.body.email

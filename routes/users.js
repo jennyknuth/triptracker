@@ -4,8 +4,11 @@ var db = require('monk')(process.env.MONGOLAB_URI);
 var users = db.get('users');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+router.get('/index', function(req, res, next) {
+  users.find({email: req.body.email}, function (err, docs) {
+    if (err) throw err;
+    res.render('users/index', docs);
+  })
 });
 
 module.exports = router;
