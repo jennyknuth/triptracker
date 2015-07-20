@@ -1,8 +1,38 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 body {
-  padding: 50px;
+  padding: 5vw;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: lightgray;
 }
 
 a {
   color: #00B7FF;
+}
+
+.box {
+  display: block;
+  float: left;
+  height: 10vw;
+  width: 10vw;
+  background-color: gray;
+  border: 5px solid white;
+  margin: 1vw;
+}
+.bike {
+ background-color: green;
+}
+
+.walk {
+  background-color: blue;
+}
+
+.bus{
+  background-color: orange;
+}
+
+.carpool{
+  background-color: teal;
 }

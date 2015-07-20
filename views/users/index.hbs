@@ -1,9 +1,23 @@
-<a href="/users/new">+ Add Another Commuter</a>
+<p>
+  You are logged in as {{email}}
+</p>
+<h3><a href="/logout">LOGOUT</a></h3>
+<h3><a href="/">HOME</a></h3>
 
-{{#each docs}}
+<a href="/users/new">+ Add A Student to This Account</a>
+
+{{errors}}
+{{#each users}}
+<div class="delete">
+  <form class="" action=":id/delete" method="post">
+
+  </form>
+</div>
   <div class="user">
-    <a href="/{{email}}"></a>
-    {{name}}
-    image
+    <a href="/users/{{_id}}">{{firstName}} {{lastName}}</a>
+    {{school}} {{grade}}
+    <p>
+      image
+    </p>
   </div>
 {{/each}}

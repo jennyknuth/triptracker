@@ -28,7 +28,7 @@ router.post('/login', function (req, res, next) {
       if (err) throw err
       if (!doc) {
         // errors.push('New user?')
-        res.render('login', {register: " "})
+        res.render('login', {register: " "}) // so register link shows up
       } else {
         bcrypt.compare(req.body.password, doc.password, function (err, match){
           if (err) throw err
@@ -65,6 +65,7 @@ router.post('/register', function (req, res, next) {
     users.find({email: req.body.email}, function (err, docs) {
       if (docs.length === 0) {
         req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
+        req.body.parent = true
         users.insert(req.body, function (err, doc) {
           if (err) {
             res.redirect('/:_id')
@@ -80,4 +81,8 @@ router.post('/register', function (req, res, next) {
     })
   }
 });
+router.get('/logout', function (req, res, next) {
+  req.session = null
+  res.redirect('/')
+})
 module.exports = router;

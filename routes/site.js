@@ -5,7 +5,7 @@ var users = db.get('users');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('home', { title: 'Trip Tracker' });
+  res.render('home', { title: 'Trip Tracker', email: req.session.email, user: req.session.email});
 });
 router.get('/about', function (req, res, next) {
   res.render('about', {})
