@@ -19,7 +19,7 @@ router.post('/', function (req, res) {
 });
 
 router.get('/:id', function (req, res) {
-  trips.find({userId: req.params.id}, function (err, trips) {
+  users.findOne({userId: parseInt(req.params.id)}, function (err, trips) {
     if (err) res.send(err);
     res.status(200).json(trips);
   });
