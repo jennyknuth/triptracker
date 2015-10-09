@@ -1,3 +1,3 @@
 # triptracker
 
-https://git.heroku.com/infinite-bayou-4599.git
+https://infinite-bayou-4599.herokuapp.com/api/trips
