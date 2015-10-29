@@ -56,5 +56,4 @@ router.post('/:id/update', function(req, res, next) {
   })
 });
 
-
 module.exports = router;
