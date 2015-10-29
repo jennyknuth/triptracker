@@ -16,4 +16,5 @@ box.addEventListener('click', function (event) {
     event.target.parentNode.parentNode.classList.add("carpool")
   }
   // event.target.parentNode.submit()
+  event.preventDefault()
 })
